@@ -1,24 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18121" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18092"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Klotski" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xfu-MB-1sK">
+                                <rect key="frame" x="16" y="198.33333333333334" width="358" height="447.33333333333326"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r6a-i7-yxL">
+                                        <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="447.33333333333331"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gPf-7p-9QR" userLabel="Classic Game">
+                                                <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="179"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                <state key="normal" title="Classic Game"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUa-Gz-DIh" userLabel="Start a random game">
+                                                <rect key="frame" x="0.0" y="179" width="89.666666666666671" height="179"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                <state key="normal" title="Tutorials"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wkd-Te-xXt" userLabel="Create a game">
+                                                <rect key="frame" x="0.0" y="358" width="89.666666666666671" height="89.333333333333314"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <state key="normal" title="Game Center"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="aUa-Gz-DIh" firstAttribute="height" secondItem="gPf-7p-9QR" secondAttribute="height" id="FgR-8h-eU9"/>
+                                            <constraint firstItem="wkd-Te-xXt" firstAttribute="height" secondItem="gPf-7p-9QR" secondAttribute="height" multiplier="0.5" id="Ufz-7F-uB9"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5Ya-eo-Qh7">
+                                        <rect key="frame" x="89.666666666666686" y="0.0" width="179" height="447.33333333333331"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hyq-UO-2kw">
+                                                <rect key="frame" x="0.0" y="0.0" width="179" height="179"/>
+                                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0s-RE-NiR">
+                                                <rect key="frame" x="0.0" y="178.99999999999997" width="179" height="89.333333333333343"/>
+                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <state key="normal" title="Ramdom Game"/>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cC5-cQ-jUx">
+                                                <rect key="frame" x="0.0" y="268.33333333333337" width="179" height="89.666666666666686"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6hO-oN-BPH" userLabel="Game Center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="89.333333333333329" height="89.666666666666671"/>
+                                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                        <state key="normal" title="View History"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="E5v-wq-cgr" userLabel="How to play">
+                                                        <rect key="frame" x="89.333333333333314" y="0.0" width="89.666666666666686" height="89.666666666666671"/>
+                                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                        <state key="normal" title="Your Record"/>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="E5v-wq-cgr" firstAttribute="width" secondItem="6hO-oN-BPH" secondAttribute="width" id="NNT-0W-Mcb"/>
+                                                </constraints>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nK7-0E-bK9">
+                                                <rect key="frame" x="0.0" y="358" width="179" height="89.333333333333314"/>
+                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="cC5-cQ-jUx" firstAttribute="height" secondItem="n0s-RE-NiR" secondAttribute="height" id="1ro-sy-xEX"/>
+                                            <constraint firstItem="nK7-0E-bK9" firstAttribute="height" secondItem="n0s-RE-NiR" secondAttribute="height" id="kVG-kn-iZv"/>
+                                            <constraint firstItem="n0s-RE-NiR" firstAttribute="height" secondItem="hyq-UO-2kw" secondAttribute="height" multiplier="0.5" id="vgc-dh-yJo"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pTc-Y9-hn7">
+                                        <rect key="frame" x="268.66666666666669" y="0.0" width="89.333333333333314" height="447.33333333333331"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6ZK-1e-Lx3" userLabel="Preference">
+                                                <rect key="frame" x="0.0" y="0.0" width="89.333333333333329" height="179"/>
+                                                <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Create Game"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42Z-ll-THH" userLabel="About">
+                                                <rect key="frame" x="0.0" y="179" width="89.333333333333329" height="179"/>
+                                                <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Settings"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKj-1g-9XL" userLabel="Your Record">
+                                                <rect key="frame" x="0.0" y="358" width="89.333333333333329" height="89.333333333333314"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="About"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="tKj-1g-9XL" firstAttribute="height" secondItem="6ZK-1e-Lx3" secondAttribute="height" multiplier="0.5" id="3fx-5O-u5y"/>
+                                            <constraint firstItem="42Z-ll-THH" firstAttribute="height" secondItem="6ZK-1e-Lx3" secondAttribute="height" id="yr9-ph-YMV"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5Ya-eo-Qh7" firstAttribute="width" secondItem="r6a-i7-yxL" secondAttribute="width" multiplier="2" id="Sq1-RV-rTA"/>
+                                    <constraint firstItem="pTc-Y9-hn7" firstAttribute="width" secondItem="r6a-i7-yxL" secondAttribute="width" id="ZfB-2E-pbt"/>
+                                    <constraint firstAttribute="width" secondItem="Xfu-MB-1sK" secondAttribute="height" multiplier="4:5" id="fn3-XA-Fhf"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xfu-MB-1sK" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" id="2cF-uU-5qk"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="Xfu-MB-1sK" secondAttribute="trailing" constant="16" id="HQa-B4-YOJ"/>
+                            <constraint firstItem="Xfu-MB-1sK" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="16" id="ZYy-oB-Th0"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="53.571428571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
